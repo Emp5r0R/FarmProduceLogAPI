@@ -17,6 +17,26 @@ A Spring Boot REST API for tracking farm produce logistics, managing inventory, 
 - Java 17 (only if running locally without Docker)
 - Maven (only if running locally without Docker)
 
+## Production Configuration
+
+
+| Variable | Description | Default (Dev) |
+|----------|-------------|---------------|
+| `DB_USERNAME` | Database username | `root` |
+| `DB_PASSWORD` | Database password | `root` |
+| `JWT_SECRET` | Secret key for signing JWTs | *(Insecure Default)* |
+| `JWT_EXPIRATION_MS` | JWT validity in ms | `86400000` (24h) |
+
+### Running with Custom Secrets
+
+You can pass these variables to Docker Compose:
+
+```bash
+export DB_PASSWORD=my_secure_password
+export JWT_SECRET=my_very_long_secure_secret_key
+docker-compose up --build
+```
+
 ## Getting Started
 
 

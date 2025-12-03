@@ -19,7 +19,7 @@ public class ProduceController {
 
     @PostMapping
     @PreAuthorize("hasRole('FARMER') or hasRole('ADMIN')")
-    public ResponseEntity<Produce> addProduce(@RequestBody Produce produce) {
+    public ResponseEntity<Produce> addProduce(@jakarta.validation.Valid @RequestBody Produce produce) {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return ResponseEntity.ok(produceService.addProduce(produce, userDetails.getUsername()));
     }
@@ -38,7 +38,7 @@ public class ProduceController {
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('FARMER') or hasRole('ADMIN')")
-    public ResponseEntity<Produce> updateProduce(@PathVariable Long id, @RequestBody Produce produce) {
+    public ResponseEntity<Produce> updateProduce(@PathVariable Long id, @jakarta.validation.Valid @RequestBody Produce produce) {
         return ResponseEntity.ok(produceService.updateProduce(id, produce));
     }
 
