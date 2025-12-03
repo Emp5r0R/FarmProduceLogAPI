@@ -1,25 +1,24 @@
 package com.farm.logistics.service;
 
+import com.farm.logistics.exception.ResourceNotFoundException;
 import com.farm.logistics.model.Produce;
 import com.farm.logistics.model.User;
 import com.farm.logistics.repository.ProduceRepository;
 import com.farm.logistics.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class ProduceService {
-    @Autowired
-    private ProduceRepository produceRepository;
-
-    @Autowired
-    private UserRepository userRepository;
+    private final ProduceRepository produceRepository;
+    private final UserRepository userRepository;
 
     public Produce addProduce(Produce produce, String username) {
         User farmer = userRepository.findByUsername(username)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with username: " + username));
         produce.setFarmer(farmer);
         return produceRepository.save(produce);
     }
@@ -30,13 +29,13 @@ public class ProduceService {
 
     public List<Produce> getProduceByFarmer(String username) {
         User farmer = userRepository.findByUsername(username)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with username: " + username));
         return produceRepository.findByFarmerId(farmer.getId());
     }
 
     public Produce updateProduce(Long id, Produce produceDetails) {
         Produce produce = produceRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Produce not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Produce not found with id: " + id));
         
         produce.setName(produceDetails.getName());
         produce.setType(produceDetails.getType());
