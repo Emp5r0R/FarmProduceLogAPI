@@ -46,7 +46,8 @@ public class AuthController {
         String role = userDetails.getAuthorities().stream().findFirst().get().getAuthority();
 
         return ResponseEntity.ok(new JwtResponse(jwt,
-                0L, // ID not easily accessible from UserDetails without custom impl, skipping for now or fetching from repo
+                0L, // ID not easily accessible from UserDetails without custom impl, skipping for
+                    // now or fetching from repo
                 userDetails.getUsername(),
                 "email@example.com", // Email not in UserDetails standard impl
                 role));
@@ -69,12 +70,12 @@ public class AuthController {
         // Create new user's account
         User.Role role = User.Role.ROLE_FARMER; // Default role
         if (signUpRequest.getRole() != null && !signUpRequest.getRole().isEmpty()) {
-             String strRole = signUpRequest.getRole().iterator().next();
-             try {
-                 role = User.Role.valueOf(strRole);
-             } catch (IllegalArgumentException e) {
-                 // Keep default
-             }
+            String strRole = signUpRequest.getRole().iterator().next();
+            try {
+                role = User.Role.valueOf(strRole);
+            } catch (IllegalArgumentException e) {
+                // Keep default
+            }
         }
 
         User user = new User(signUpRequest.getUsername(),
