@@ -1,5 +1,7 @@
 com/farm/logistics/config/SecurityConfig.class
 com/farm/logistics/payload/AuthPayloads$SignupRequest.class
+com/farm/logistics/exception/ResourceNotFoundException.class
+com/farm/logistics/exception/GlobalExceptionHandler.class
 com/farm/logistics/payload/AuthPayloads.class
 com/farm/logistics/repository/DeliveryScheduleRepository.class
 com/farm/logistics/security/AuthTokenFilter.class
@@ -23,5 +25,6 @@ com/farm/logistics/payload/AuthPayloads$LoginRequest.class
 com/farm/logistics/model/User$Role.class
 com/farm/logistics/model/DeliverySchedule.class
 com/farm/logistics/model/Shipment$Status.class
+com/farm/logistics/exception/BadRequestException.class
 com/farm/logistics/security/JwtUtils.class
 com/farm/logistics/repository/ShipmentRepository.class

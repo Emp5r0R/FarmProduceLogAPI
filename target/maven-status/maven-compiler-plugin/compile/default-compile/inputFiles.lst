@@ -8,7 +8,9 @@
 /home/n_emperor/Documents/Projects/SpringBootPaymentApi/src/main/java/com/farm/logistics/model/User.java
 /home/n_emperor/Documents/Projects/SpringBootPaymentApi/src/main/java/com/farm/logistics/controller/ShipmentController.java
 /home/n_emperor/Documents/Projects/SpringBootPaymentApi/src/main/java/com/farm/logistics/LogisticsApplication.java
+/home/n_emperor/Documents/Projects/SpringBootPaymentApi/src/main/java/com/farm/logistics/exception/ResourceNotFoundException.java
 /home/n_emperor/Documents/Projects/SpringBootPaymentApi/src/main/java/com/farm/logistics/controller/DeliveryController.java
+/home/n_emperor/Documents/Projects/SpringBootPaymentApi/src/main/java/com/farm/logistics/exception/BadRequestException.java
 /home/n_emperor/Documents/Projects/SpringBootPaymentApi/src/main/java/com/farm/logistics/repository/ProduceRepository.java
 /home/n_emperor/Documents/Projects/SpringBootPaymentApi/src/main/java/com/farm/logistics/repository/ShipmentRepository.java
 /home/n_emperor/Documents/Projects/SpringBootPaymentApi/src/main/java/com/farm/logistics/payload/AuthPayloads.java
@@ -17,5 +19,6 @@
 /home/n_emperor/Documents/Projects/SpringBootPaymentApi/src/main/java/com/farm/logistics/security/AuthTokenFilter.java
 /home/n_emperor/Documents/Projects/SpringBootPaymentApi/src/main/java/com/farm/logistics/model/Shipment.java
 /home/n_emperor/Documents/Projects/SpringBootPaymentApi/src/main/java/com/farm/logistics/repository/UserRepository.java
+/home/n_emperor/Documents/Projects/SpringBootPaymentApi/src/main/java/com/farm/logistics/exception/GlobalExceptionHandler.java
 /home/n_emperor/Documents/Projects/SpringBootPaymentApi/src/main/java/com/farm/logistics/controller/ProduceController.java
 /home/n_emperor/Documents/Projects/SpringBootPaymentApi/src/main/java/com/farm/logistics/controller/AuthController.java
